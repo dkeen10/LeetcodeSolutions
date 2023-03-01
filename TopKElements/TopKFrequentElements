@@ -1,0 +1,26 @@
+# Leetcode 347
+# https://leetcode.com/problems/top-k-frequent-elements/
+
+def topKFrequent(nums, k):
+    """
+    :type nums: List[int]
+    :type k: int
+    :rtype: List[int]
+    """
+    dic = {}
+    for element in nums:
+        if element in dic:
+            dic[element] += 1
+        else:
+            dic[element] = 1
+
+    return sorted(dic, key=dic.get, reverse=True)[:k]
+
+
+def main():
+    topKFrequent([1, 1, 1, 2, 2, 3], 2)
+
+
+if __name__ == "__main__":
+    main()
+    
