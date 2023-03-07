@@ -1,10 +1,13 @@
+//https://leetcode.com/problems/sort-colors/
+
+
 class Solution {
-    public void sortColors(int[] nums) {
+    public static void sortColors(int[] nums) {
         if (nums.length < 2) {
             return;
         }
-        min = 0;
-        max = nums.length - 1;
+        int min = 0;
+        int max = nums.length - 1;
 
         for (int i  = min; i < max; i++) {
             if (nums[i] == 0) {
@@ -24,8 +27,14 @@ class Solution {
                 i++;
             }
         }
-        system.out.println(nums)
-        
+        System.out.println(nums); 
     }
 }
 
+
+class Test {
+    public static void main(String[] args) {
+        int[] array = new int[]{0, 2, 1, 1, 2};
+        Solution.sortColors(array);
+    }
+}
