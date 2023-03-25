@@ -1,11 +1,27 @@
 //https://leetcode.com/problems/first-missing-positive/description/
 
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 
 class Solution {
     public static int firstMissingPositive(int[] nums) {
+        HashSet<Integer> set = new HashSet<>();
 
+        for (int i = 0; i < nums.length; i++) {
+            set.add(nums[i]);
+        }
 
-        System.out.println("hi");
+        int j = 1;
+        while (j <= nums.length) {
+            if (set.contains(j)) {
+                j++;
+            } else {
+                return j;
+            }
+        }
         return -1;
     }
 }    
@@ -13,7 +29,7 @@ class Solution {
 
 class Test {
     public static void main(String[] args) {
-        int[] array = new int[]{0, 2, 1, 1, 2};
+        int[] array = new int[]{0, 1, -1, 3, 4};
         Solution.firstMissingPositive(array);
     }
 }
