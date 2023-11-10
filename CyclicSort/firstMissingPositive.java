@@ -30,6 +30,6 @@ class Solution {
 class Test {
     public static void main(String[] args) {
         int[] array = new int[]{0, 1, -1, 3, 4};
-        Solution.firstMissingPositive(array);
+        System.out.println(Solution.firstMissingPositive(array));
     }
 }
